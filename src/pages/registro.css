@@ -1,0 +1,16 @@
+.registro-page { padding:16px }
+.registro-form { display:grid; gap:12px; max-width:560px }
+.registro-form label { display:flex; flex-direction:column }
+.registro-form input[type="text"], .registro-form input[type="email"], .registro-form input[type="url"], .registro-form textarea, .registro-form select {
+	padding: 12px 14px;
+	border-radius: 10px;
+	border: 1px solid rgba(15,23,36,0.08);
+	background: var(--surface);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+}
+.registro-form input:focus, .registro-form textarea:focus, .registro-form select:focus {
+	outline: none;
+	box-shadow: 0 6px 22px rgba(124,58,237,0.12);
+	border-color: var(--violet-600);
+}
+.terms { margin-top:8px }

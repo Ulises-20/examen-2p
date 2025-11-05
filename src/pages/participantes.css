@@ -1,0 +1,11 @@
+.participants-page { padding:16px }
+.search-form { margin-bottom:12px }
+.cards { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:16px }
+.card { background: var(--surface); padding:14px; border-radius:14px; display:flex; gap:12px; align-items:center; box-shadow: 0 8px 24px rgba(15,23,36,0.06); border: 1px solid rgba(15,23,36,0.04); transition: transform .18s ease, box-shadow .18s ease }
+.card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(15,23,36,0.09) }
+.avatar { width:64px; height:64px; object-fit:cover; border-radius:50%; box-shadow: 0 4px 14px rgba(124,58,237,0.08); border: 3px solid rgba(124,58,237,0.08) }
+.card-body h5, .card-body h3 { margin:0 }
+.ocupacion { color:var(--muted) }
+.list-logo { height:48px; width:auto }
+
+.placeholder { color: var(--muted); font-style: italic }
