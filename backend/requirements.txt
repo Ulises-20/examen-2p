@@ -1,8 +1,9 @@
 fastapi==0.100.0
 uvicorn[standard]==0.22.0
-SQLAlchemy==2.0.19
+# Allow a newer SQLAlchemy that includes fixes for Python 3.13's typing behavior.
+# If you prefer to pin to a concrete version, change the line below to e.g. SQLAlchemy==2.0.26
+SQLAlchemy>=2.0.26
 python-multipart==0.0.6
 PyMySQL==1.1.0
 gunicorn==21.2.0
 psycopg2-binary==2.9.7
-python-multipart==0.0.6
