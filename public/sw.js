@@ -1,5 +1,6 @@
 // Very small service worker: cache the page shell on install and serve from cache
-const CACHE = 'congreso-shell-v1'
+// Bump the cache name when changing deploys so clients pick up the new service worker
+const CACHE = 'congreso-shell-v2'
 const OFFLINE_URL = '/'
 
 self.addEventListener('install', (event) => {
