@@ -1,5 +1,11 @@
 # React + Vite
 
+Important: the original ASP.NET Core backend was migrated to a Python FastAPI backend to simplify deployment (Render does not provide a first-class .NET runtime in the current setup).
+
+Backend location: `backend/app.py` (FastAPI) with models in `backend/models.py` and dependencies in `backend/requirements.txt`.
+
+This repository no longer uses the .NET backend; old C# files in `backend/` were replaced with deprecation notes. Use the Python backend for local development and deployment.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

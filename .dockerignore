@@ -1,0 +1,14 @@
+bin/
+obj/
+**/bin/
+**/obj/
+node_modules/
+dist/
+backend/publish/
+*.log
+.env
+.DS_Store
+examen.db
+*.db
+*.sqlite
+/.git
