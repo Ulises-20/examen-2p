@@ -3,7 +3,17 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import create_engine, func
 from sqlalchemy.orm import sessionmaker
-from backend.models import Base, Participant
+
+# Support two import modes:
+# - When running from the repo root (python -m uvicorn backend.app:app) the
+#   package name is `backend` and we can import `backend.models`.
+# - When Render's service root is set to the `backend` folder, the working
+#   directory is already `backend` and importing `backend.models` will fail.
+#   In that case import the local `models` module directly.
+try:
+    from backend.models import Base, Participant
+except Exception:
+    from models import Base, Participant
 from pydantic import BaseModel
 
 DB_PATH = os.path.join(os.path.dirname(__file__), 'examen.db')
