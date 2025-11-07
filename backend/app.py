@@ -23,6 +23,13 @@ DATABASE_URL = os.environ.get('DATABASE_URL', DEFAULT_DATABASE_URL)
 
 # Create engine with sqlite-specific connect_args when using sqlite, otherwise
 # create a regular engine (for MySQL/Postgres on Render).
+# Normalize DATABASE_URL for psycopg v3 compatibility:
+# - If the user provided a URL that uses the psycopg2 driver (postgresql+psycopg2://)
+#   convert it to the psycopg v3 driver name (postgresql+psycopg://) so SQLAlchemy
+#   imports the correct DBAPI when using `psycopg` (v3).
+if DATABASE_URL and 'psycopg2' in DATABASE_URL:
+    DATABASE_URL = DATABASE_URL.replace('psycopg2', 'psycopg')
+
 if DATABASE_URL.startswith('sqlite'):
     engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 else:

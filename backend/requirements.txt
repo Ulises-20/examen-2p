@@ -6,4 +6,5 @@ SQLAlchemy>=2.0.26
 python-multipart==0.0.6
 PyMySQL==1.1.0
 gunicorn==21.2.0
-psycopg2-binary==2.9.7
+# Use modern psycopg (v3) with the binary extras to get prebuilt wheels for newer Python versions
+psycopg[binary]>=3.2.0
